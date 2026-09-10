@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About · Butter Bean Plates</title>
+  <meta name="description" content="Butter Bean Plates is a modern recipe authority — thoughtful cooking, seasonal ingredients, and the art of the perfect plate.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:opsz,wght@14..32,300..700&family=Newsreader:ital,opsz,wght@0,6..72,200..700;1,6..72,200..700&display=swap" rel="stylesheet">
+  <style>
+    /* —— reset & base —— */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #fbf8f2;
+      color: #1e1b1a;
+      font-family: 'Newsreader', 'Inter', serif;
+      font-weight: 400;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1.8rem;
+    }
+    /* —— typography —— */
+    .serif { font-family: 'DM Serif Display', 'Georgia', serif; }
+    .sans { font-family: 'Inter', 'Helvetica', sans-serif; }
+    .display-large {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(3rem, 8vw, 5.5rem);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      font-weight: 400;
+    }
+    .display-small {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+    }
+    .heading-2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      line-height: 1.2;
+    }
+    .heading-3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.6rem;
+      line-height: 1.3;
+    }
+    .body-large {
+      font-size: 1.2rem;
+      line-height: 1.7;
+      color: #2d2826;
+    }
+    .body-text {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: #2d2826;
+    }
+    .meta {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: #7a6e68;
+    }
+    .tag {
+      display: inline-block;
+      background: #e7ded7;
+      padding: 0.2rem 1rem;
+      border-radius: 30px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: #3d322e;
+      font-family: 'Inter', sans-serif;
+    }
+    /* —— buttons & interactive —— */
+    .btn-outline {
+      display: inline-block;
+      padding: 0.6rem 2rem;
+      border: 1.5px solid #1e1b1a;
+      border-radius: 60px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      font-size: 0.9rem;
+      letter-spacing: 0.02em;
+      transition: 0.2s ease;
+      background: transparent;
+      color: #1e1b1a;
+      cursor: default;
+    }
+    .btn-outline:hover {
+      background: #1e1b1a;
+      color: #fbf8f2;
+    }
+    /* —— colour palette —— */
+    :root {
+      --cream: #fbf8f2;
+      --warm-white: #f5efe9;
+      --terracotta: #c26a4a;
+      --olive: #7a8b6b;
+      --charcoal: #1e1b1a;
+      --sand: #d9cdc0;
+      --muted-gold: #b89a7a;
+    }
+    /* —— header / nav —— */
+    .site-header {
+      padding: 1.8rem 0 1.2rem;
+      border-bottom: 1px solid #e1d6ce;
+      background: var(--cream);
+    }
+    .header-grid {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .brand {
+      display: flex;
+      align-items: baseline;
+      gap: 0.3rem;
+    }
+    .brand-name {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.9rem;
+      letter-spacing: -0.02em;
+      color: #1e1b1a;
+    }
+    .brand-tagline {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 400;
+      color: #7a6e68;
+      letter-spacing: 0.06em;
+      margin-left: 0.2rem;
+      border-left: 1px solid #cbbcb2;
+      padding-left: 0.8rem;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2.2rem;
+      font-family: 'Inter', sans-serif;
+      font-weight: 450;
+      font-size: 0.9rem;
+      letter-spacing: 0.02em;
+      color: #2d2826;
+    }
+    .nav-links a { transition: 0.15s; border-bottom: 1px solid transparent; }
+    .nav-links a:hover { border-bottom-color: #c26a4a; color: #1e1b1a; }
+    .search-icon {
+      font-size: 1.2rem;
+      opacity: 0.7;
+      cursor: default;
+      transition: 0.2s;
+    }
+    .search-icon:hover { opacity: 1; }
+
+    /* —— about hero —— */
+    .about-hero {
+      padding: 3.5rem 0 2rem;
+      border-bottom: 1px solid #e1d6ce;
+    }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+    .about-content .meta { margin-bottom: 0.4rem; }
+    .about-content h1 { margin-bottom: 0.6rem; }
+    .about-content p { margin: 1rem 0; max-width: 90%; }
+    .about-image {
+      background: #d9cdc0;
+      border-radius: 32px 32px 32px 4px;
+      aspect-ratio: 4/3;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" width="600" height="450"><rect width="600" height="450" fill="%23d9cdc0"/><circle cx="180" cy="180" r="90" fill="%23b89a7a" opacity="0.3"/><circle cx="420" cy="240" r="100" fill="%23c26a4a" opacity="0.25"/><path d="M100 320 L250 200 L380 300 L500 220 L560 320 L460 400 L280 360 L140 400 L60 320Z" fill="%237a8b6b" opacity="0.2"/><rect x="160" y="260" width="70" height="100" fill="%23b89a7a" opacity="0.4"/><rect x="380" y="280" width="80" height="120" fill="%23c26a4a" opacity="0.25"/><circle cx="300" cy="340" r="50" fill="%23f5efe9" opacity="0.7"/></svg>');
+      background-size: cover;
+      background-position: center;
+      box-shadow: 0 12px 28px -8px rgba(30,27,26,0.08);
+    }
+
+    /* —— mission & values —— */
+    .mission-section {
+      padding: 3rem 0 2.5rem;
+      border-bottom: 1px solid #e1d6ce;
+    }
+    .mission-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2.5rem;
+      margin-top: 2rem;
+    }
+    .mission-card {
+      background: #f5efe9;
+      padding: 2rem 1.8rem;
+      border-radius: 28px 12px 28px 4px;
+      border: 1px solid #e7ded7;
+    }
+    .mission-card h3 { font-family: 'DM Serif Display', serif; font-size: 1.5rem; margin-bottom: 0.3rem; }
+    .mission-card p { font-size: 0.98rem; color: #2d2826; }
+
+    /* —— team / contributors —— */
+    .team-section {
+      padding: 3rem 0 2.5rem;
+      border-bottom: 1px solid #e1d6ce;
+    }
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .team-card {
+      background: white;
+      padding: 1.8rem 1.5rem;
+      border-radius: 24px 8px 24px 4px;
+      border: 1px solid #ede4db;
+      text-align: center;
+    }
+    .team-card .avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: #d9cdc0;
+      margin: 0 auto 0.8rem;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100"><circle cx="50" cy="40" r="30" fill="%23b89a7a" opacity="0.4"/><circle cx="50" cy="90" r="35" fill="%23c26a4a" opacity="0.3"/></svg>');
+      background-size: cover;
+    }
+    .team-card h4 { font-family: 'DM Serif Display', serif; font-size: 1.2rem; }
+    .team-card .role { font-family: 'Inter', sans-serif; font-size: 0.8rem; color: #7a6e68; }
+
+    /* —— timeline / story —— */
+    .timeline-section {
+      padding: 3rem 0 2.5rem;
+      border-bottom: 1px solid #e1d6ce;
+    }
+    .timeline-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .timeline-item {
+      border-left: 3px solid #c26a4a;
+      padding-left: 1.5rem;
+    }
+    .timeline-item .year { font-family: 'DM Serif Display', serif; font-size: 2rem; color: #c26a4a; }
+    .timeline-item p { font-size: 0.98rem; color: #2d2826; }
+
+    /* —— footer —— */
+    .site-footer {
+      padding: 3.5rem 0 2rem;
+      background: #f5efe9;
+      margin-top: 2rem;
+      border-top: 1px solid #e1d6ce;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.2fr;
+      gap: 2.5rem;
+      margin-bottom: 2.5rem;
+    }
+    .footer-brand .brand-name { font-size: 1.6rem; }
+    .footer-brand p { margin: 0.6rem 0; font-size: 0.95rem; color: #3d322e; }
+    .footer-links h4, .footer-legal h4 { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 0.8rem; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 0.8rem; color: #4d3f3a; }
+    .footer-links a, .footer-legal a { display: block; padding: 0.25rem 0; font-size: 0.9rem; color: #3d322e; border-bottom: 1px solid transparent; transition: 0.1s; }
+    .footer-links a:hover, .footer-legal a:hover { border-bottom-color: #c26a4a; }
+    .footer-bottom {
+      border-top: 1px solid #d9cdc0;
+      padding-top: 1.8rem;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      font-size: 0.8rem;
+      color: #6b5d56;
+    }
+    /* —— responsive —— */
+    @media (max-width: 1024px) {
+      .about-grid { grid-template-columns: 1fr; }
+      .mission-grid { grid-template-columns: 1fr 1fr; }
+      .team-grid { grid-template-columns: 1fr 1fr; }
+      .timeline-grid { grid-template-columns: 1fr 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 700px) {
+      .header-grid { flex-direction: column; align-items: start; }
+      .nav-links { flex-wrap: wrap; gap: 1rem; }
+      .mission-grid { grid-template-columns: 1fr; }
+      .team-grid { grid-template-columns: 1fr; }
+      .timeline-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .about-content p { max-width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-grid">
+      <div class="brand">
+        <span class="brand-name">Butter Bean Plates</span>
+        <span class="brand-tagline">seasonal · honest · delicious</span>
+      </div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html" style="border-bottom-color:#c26a4a;">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="terms.html">Terms Of Privacy</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="cookies.html">Cookies Policy</a>
+        <a href="disclaimer.html">Disclaimer</a>
+        <a href="categories.html">Categories</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- about hero -->
+    <section class="about-hero">
+      <div class="container about-grid">
+        <div class="about-content">
+          <div class="meta">about us</div>
+          <h1 class="display-large">Cooking with clarity</h1>
+          <p class="body-large">Butter Bean Plates is a quiet rebellion against the over-complicated. We believe in honest cooking — where ingredients speak for themselves and every plate tells a story.</p>
+          <p class="body-text">Founded in 2026, we’re a small team of writers, chefs, and curious eaters who think the humble legume deserves a spotlight. Our kitchen is guided by seasonality, simplicity, and the joy of a well-made meal.</p>
+          <span class="btn-outline" style="border-color:#c26a4a; color:#c26a4a;">meet the team ↓</span>
+        </div>
+        <div class="about-image"></div>
+      </div>
+    </section>
+
+    <!-- mission & values -->
+    <section class="mission-section">
+      <div class="container">
+        <h2 class="heading-2" style="text-align:center;">What we stand for</h2>
+        <div class="mission-grid">
+          <div class="mission-card">
+            <h3>🌱 Seasonal</h3>
+            <p>We cook with the rhythm of the land. Our recipes celebrate what’s at its peak — from spring peas to winter roots.</p>
+          </div>
+          <div class="mission-card">
+            <h3>📖 Honest</h3>
+            <p>No gimmicks, no fluff. We share techniques that work, ingredients that matter, and stories that connect.</p>
+          </div>
+          <div class="mission-card">
+            <h3>🍽️ Delicious</h3>
+            <p>Above all, food should taste extraordinary. We chase flavour with integrity — and a little butter.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- team -->
+    <section class="team-section">
+      <div class="container">
+        <h2 class="heading-2" style="text-align:center;">The people behind the plates</h2>
+        <div class="team-grid">
+          <div class="team-card">
+            <div class="avatar"></div>
+            <h4>Margot Lee</h4>
+            <div class="role">Editor & recipe developer</div>
+            <p style="font-size:0.9rem; color:#3d322e; margin-top:0.5rem;">Margot brings a chef’s precision and a poet’s touch to every dish.</p>
+          </div>
+          <div class="team-card">
+            <div class="avatar"></div>
+            <h4>James Carter</h4>
+            <div class="role">Food writer & stylist</div>
+            <p style="font-size:0.9rem; color:#3d322e; margin-top:0.5rem;">James believes in the beauty of imperfection — and the power of a good stew.</p>
+          </div>
+          <div class="team-card">
+            <div class="avatar"></div>
+            <h4>Amara Singh</h4>
+            <div class="role">Storyteller & producer</div>
+            <p style="font-size:0.9rem; color:#3d322e; margin-top:0.5rem;">Amara weaves culture, memory, and flavour into every essay and interview.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- timeline -->
+    <section class="timeline-section">
+      <div class="container">
+        <h2 class="heading-2" style="text-align:center;">Our story</h2>
+        <div class="timeline-grid">
+          <div class="timeline-item">
+            <div class="year">2024</div>
+            <p><strong>The idea</strong> — over a pot of braised butter beans, we realised there was a gap: thoughtful, ingredient-first writing that didn’t take itself too seriously.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="year">2025</div>
+            <p><strong>The kitchen</strong> — we built a test kitchen, tested 200+ recipes, and found our voice: warm, informed, and never fussy.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="year">2026</div>
+            <p><strong>Butter Bean Plates</strong> — we launched with a mission to make legume-forward cooking approachable, exciting, and utterly delicious.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="brand-name" style="font-family:'DM Serif Display',serif; font-size:1.8rem;">Butter Bean Plates</span>
+          <p style="max-width:90%;">A modern recipe authority — celebrating the legume, the grain, and the table. Thoughtful cooking for curious eaters.</p>
+          <span class="meta">est. 2026 · london / new york</span>
+        </div>
+        <div class="footer-links">
+          <h4>Explore</h4>
+          <a href="#">Recipes</a>
+          <a href="#">Techniques</a>
+          <a href="#">Seasonal Guides</a>
+          <a href="#">Ingredients</a>
+        </div>
+        <div class="footer-links">
+          <h4>About</h4>
+          <a href="#">Editorial Policy</a>
+          <a href="#">Authors</a>
+          <a href="#">Contact</a>
+          <a href="#">FAQ</a>
+        </div>
+        <div class="footer-legal">
+          <h4>Legal</h4>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms & Conditions</a>
+          <a href="#">Cookie Policy</a>
+          <a href="#">Disclaimer</a>
+          <a href="#">Sitemap</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Butter Bean Plates · all rights reserved</span>
+        <span>crafted with butter & salt</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

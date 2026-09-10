@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact · Butter Bean Plates</title>
+  <meta name="description" content="Get in touch with Butter Bean Plates — questions, recipe ideas, or just to say hello." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:opsz,wght@14..32,300..700&family=Newsreader:ital,opsz,wght@0,6..72,200..700;1,6..72,200..700&display=swap" rel="stylesheet" />
+  <style>
+    /* —— reset & base (consistent with main) —— */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background: #fbf8f2;
+      color: #1e1b1a;
+      font-family: 'Newsreader', 'Inter', serif;
+      font-weight: 400;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    img {
+      max-width: 100%;
+      display: block;
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1.8rem;
+    }
+    /* —— typography —— */
+    .serif {
+      font-family: 'DM Serif Display', 'Georgia', serif;
+    }
+    .sans {
+      font-family: 'Inter', 'Helvetica', sans-serif;
+    }
+    .display-small {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+    }
+    .heading-2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      line-height: 1.2;
+    }
+    .body-text {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: #2d2826;
+    }
+    .meta {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: #7a6e68;
+    }
+    .tag {
+      display: inline-block;
+      background: #e7ded7;
+      padding: 0.2rem 1rem;
+      border-radius: 30px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: #3d322e;
+      font-family: 'Inter', sans-serif;
+    }
+    /* —— buttons —— */
+    .btn-outline {
+      display: inline-block;
+      padding: 0.6rem 2rem;
+      border: 1.5px solid #1e1b1a;
+      border-radius: 60px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      font-size: 0.9rem;
+      letter-spacing: 0.02em;
+      transition: 0.2s ease;
+      background: transparent;
+      color: #1e1b1a;
+      cursor: default;
+    }
+    .btn-outline:hover {
+      background: #1e1b1a;
+      color: #fbf8f2;
+    }
+    .btn-primary {
+      display: inline-block;
+      padding: 0.75rem 2.8rem;
+      border: none;
+      border-radius: 60px;
+      background: #1e1b1a;
+      color: #fbf8f2;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      font-size: 0.95rem;
+      letter-spacing: 0.02em;
+      transition: 0.2s ease;
+      cursor: pointer;
+    }
+    .btn-primary:hover {
+      background: #c26a4a;
+      color: #fbf8f2;
+    }
+    /* —— colour palette —— */
+    :root {
+      --cream: #fbf8f2;
+      --warm-white: #f5efe9;
+      --terracotta: #c26a4a;
+      --olive: #7a8b6b;
+      --charcoal: #1e1b1a;
+      --sand: #d9cdc0;
+      --muted-gold: #b89a7a;
+    }
+    /* —— header (identical to main) —— */
+    .site-header {
+      padding: 1.8rem 0 1.2rem;
+      border-bottom: 1px solid #e1d6ce;
+      background: var(--cream);
+    }
+    .header-grid {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .brand {
+      display: flex;
+      align-items: baseline;
+      gap: 0.3rem;
+    }
+    .brand-name {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.9rem;
+      letter-spacing: -0.02em;
+      color: #1e1b1a;
+    }
+    .brand-tagline {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 400;
+      color: #7a6e68;
+      letter-spacing: 0.06em;
+      margin-left: 0.2rem;
+      border-left: 1px solid #cbbcb2;
+      padding-left: 0.8rem;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2.2rem;
+      font-family: 'Inter', sans-serif;
+      font-weight: 450;
+      font-size: 0.9rem;
+      letter-spacing: 0.02em;
+      color: #2d2826;
+      flex-wrap: wrap;
+    }
+    .nav-links a {
+      transition: 0.15s;
+      border-bottom: 1px solid transparent;
+    }
+    .nav-links a:hover {
+      border-bottom-color: #c26a4a;
+      color: #1e1b1a;
+    }
+    /* —— contact hero —— */
+    .contact-hero {
+      padding: 3rem 0 2rem;
+      border-bottom: 1px solid #e1d6ce;
+    }
+    .contact-hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+    .contact-info h1 {
+      margin-bottom: 0.5rem;
+    }
+    .contact-info .body-text {
+      max-width: 90%;
+      margin: 0.8rem 0 1.5rem;
+    }
+    .contact-detail-list {
+      list-style: none;
+      margin: 1.5rem 0 0;
+    }
+    .contact-detail-list li {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      padding: 0.6rem 0;
+      border-bottom: 1px solid #e7ded7;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+    }
+    .contact-detail-list li span:first-child {
+      font-weight: 500;
+      color: #4d3f3a;
+      min-width: 80px;
+    }
+    .contact-detail-list li span:last-child {
+      color: #2d2826;
+    }
+    .social-links {
+      display: flex;
+      gap: 1.2rem;
+      margin-top: 1.8rem;
+    }
+    .social-links a {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem;
+      padding: 0.3rem 0;
+      border-bottom: 1px solid transparent;
+      transition: 0.15s;
+      color: #3d322e;
+    }
+    .social-links a:hover {
+      border-bottom-color: #c26a4a;
+    }
+    /* —— contact form —— */
+    .contact-form-card {
+      background: #f5efe9;
+      border-radius: 32px 12px 32px 4px;
+      padding: 2.2rem 2.2rem 2.5rem;
+      border: 1px solid #e1d6ce;
+    }
+    .contact-form-card .tag {
+      background: #d9cdc0;
+    }
+    .contact-form-card h2 {
+      margin: 0.5rem 0 0.2rem;
+    }
+    .form-group {
+      margin: 1.2rem 0 0.8rem;
+    }
+    .form-group label {
+      display: block;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      font-size: 0.85rem;
+      letter-spacing: 0.02em;
+      margin-bottom: 0.3rem;
+      color: #3d322e;
+    }
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 0.7rem 1rem;
+      border: 1px solid #d9cdc0;
+      border-radius: 40px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      background: white;
+      transition: 0.15s;
+      outline: none;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      border-color: #c26a4a;
+      box-shadow: 0 0 0 2px rgba(194, 106, 74, 0.15);
+    }
+    .form-group textarea {
+      border-radius: 24px;
+      min-height: 120px;
+      resize: vertical;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .form-check {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin: 0.8rem 0 1.2rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+    }
+    .form-check input {
+      width: 18px;
+      height: 18px;
+      accent-color: #c26a4a;
+    }
+    /* —— map / extra —— */
+    .contact-extras {
+      padding: 3rem 0 2.5rem;
+      border-bottom: 1px solid #e1d6ce;
+    }
+    .extras-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+    .extra-card {
+      background: white;
+      border-radius: 28px 8px 28px 4px;
+      padding: 1.8rem 1.6rem;
+      border: 1px solid #ede4db;
+      transition: 0.2s;
+    }
+    .extra-card:hover {
+      box-shadow: 0 8px 24px -8px rgba(30, 27, 26, 0.05);
+    }
+    .extra-card .emoji-big {
+      font-size: 2.4rem;
+      margin-bottom: 0.3rem;
+      display: block;
+    }
+    .extra-card h3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.3rem;
+      margin: 0.2rem 0;
+    }
+    .extra-card p {
+      font-size: 0.95rem;
+      color: #3d322e;
+    }
+    /* —— footer (identical) —— */
+    .site-footer {
+      padding: 3.5rem 0 2rem;
+      background: #f5efe9;
+      margin-top: 2rem;
+      border-top: 1px solid #e1d6ce;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.2fr;
+      gap: 2.5rem;
+      margin-bottom: 2.5rem;
+    }
+    .footer-brand .brand-name {
+      font-size: 1.6rem;
+    }
+    .footer-brand p {
+      margin: 0.6rem 0;
+      font-size: 0.95rem;
+      color: #3d322e;
+    }
+    .footer-links h4,
+    .footer-legal h4 {
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 0.8rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 0.8rem;
+      color: #4d3f3a;
+    }
+    .footer-links a,
+    .footer-legal a {
+      display: block;
+      padding: 0.25rem 0;
+      font-size: 0.9rem;
+      color: #3d322e;
+      border-bottom: 1px solid transparent;
+      transition: 0.1s;
+    }
+    .footer-links a:hover,
+    .footer-legal a:hover {
+      border-bottom-color: #c26a4a;
+    }
+    .footer-bottom {
+      border-top: 1px solid #d9cdc0;
+      padding-top: 1.8rem;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      font-size: 0.8rem;
+      color: #6b5d56;
+    }
+    /* —— responsive —— */
+    @media (max-width: 1024px) {
+      .contact-hero-grid {
+        grid-template-columns: 1fr;
+      }
+      .extras-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    @media (max-width: 700px) {
+      .header-grid {
+        flex-direction: column;
+        align-items: start;
+      }
+      .nav-links {
+        gap: 1rem;
+      }
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+      .extras-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+      .contact-info .body-text {
+        max-width: 100%;
+      }
+      .contact-detail-list li {
+        flex-wrap: wrap;
+      }
+      .contact-detail-list li span:first-child {
+        min-width: 70px;
+      }
+      .contact-form-card {
+        padding: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- header (matches main site) -->
+  <header class="site-header">
+    <div class="container header-grid">
+      <div class="brand">
+        <span class="brand-name">Butter Bean Plates</span>
+        <span class="brand-tagline">seasonal · honest · delicious</span>
+      </div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" style="border-bottom-color:#c26a4a;">Contact</a>
+        <a href="terms.html">Terms Of Privacy</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="cookies.html">Cookies Policy</a>
+        <a href="disclaimer.html">Disclaimer</a>
+        <a href="categories.html">Categories</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- contact hero / info + form -->
+    <section class="contact-hero">
+      <div class="container contact-hero-grid">
+        <div class="contact-info">
+          <div class="meta" style="margin-bottom:0.3rem;">📬 get in touch</div>
+          <h1 class="display-small">Let’s talk beans</h1>
+          <p class="body-text">
+            Have a question about a recipe? Want to share your own butter bean story? 
+            Or just fancy a chat about the perfect braise? We’d love to hear from you.
+          </p>
+          <ul class="contact-detail-list">
+            <li><span>Email</span><span>hello@butterbeanplates.com</span></li>
+            <li><span>Phone</span><span>+44 20 7946 0123</span></li>
+            <li><span>Kitchen</span><span>London, UK · open by appointment</span></li>
+          </ul>
+          <div class="social-links">
+            <a href="#">Instagram</a>
+            <a href="#">Substack</a>
+            <a href="#">Pinterest</a>
+            <a href="#">YouTube</a>
+          </div>
+        </div>
+
+        <!-- contact form -->
+        <div class="contact-form-card">
+          <span class="tag">send a note</span>
+          <h2 class="heading-2" style="margin-top:0.25rem;">Drop us a line</h2>
+          <p style="font-size:0.95rem; color:#3d322e; margin-bottom:0.5rem;">We reply within 1–2 business days.</p>
+
+          <form action="#" method="post">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Your name</label>
+                <input type="text" id="name" name="name" placeholder="e.g. Margot Lee" required />
+              </div>
+              <div class="form-group">
+                <label for="email">Email address</label>
+                <input type="email" id="email" name="email" placeholder="margot@table.com" required />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <select id="subject" name="subject">
+                <option value="">Select one…</option>
+                <option value="recipe">Recipe question</option>
+                <option value="story">Share a story</option>
+                <option value="press">Press / media</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="Tell us about your bean journey, or ask us anything…" required></textarea>
+            </div>
+
+            <div class="form-check">
+              <input type="checkbox" id="consent" name="consent" required />
+              <label for="consent">I agree to the <a href="#" style="text-decoration:underline; color:#c26a4a;">privacy policy</a> and consent to being contacted.</label>
+            </div>
+
+            <button type="submit" class="btn-primary">Send message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- extra contact options / locations -->
+    <section class="contact-extras">
+      <div class="container">
+        <div class="meta" style="margin-bottom:0.5rem;">more ways to connect</div>
+        <h2 class="heading-2" style="margin-bottom:1.8rem;">Find us in the wild</h2>
+        <div class="extras-grid">
+          <div class="extra-card">
+            <span class="emoji-big">📖</span>
+            <h3>Newsletter</h3>
+            <p>Weekly bean wisdom, recipes, and kitchen notes — straight to your inbox.</p>
+            <span class="btn-outline" style="margin-top:0.8rem; border-color:#c26a4a; color:#c26a4a; padding:0.3rem 1.4rem; font-size:0.8rem;">subscribe</span>
+          </div>
+          <div class="extra-card">
+            <span class="emoji-big">🎙️</span>
+            <h3>Podcast</h3>
+            <p>“The Butter Bean Sessions” — conversations with farmers, chefs, and home cooks.</p>
+            <span class="btn-outline" style="margin-top:0.8rem; border-color:#c26a4a; color:#c26a4a; padding:0.3rem 1.4rem; font-size:0.8rem;">listen</span>
+          </div>
+          <div class="extra-card">
+            <span class="emoji-big">📍</span>
+            <h3>Pop-up kitchen</h3>
+            <p>Join us for seasonal suppers and bean-focused feasts in London. Dates announced monthly.</p>
+            <span class="btn-outline" style="margin-top:0.8rem; border-color:#c26a4a; color:#c26a4a; padding:0.3rem 1.4rem; font-size:0.8rem;">events</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- footer (identical) -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="brand-name" style="font-family:'DM Serif Display',serif; font-size:1.8rem;">Butter Bean Plates</span>
+          <p style="max-width:90%;">A modern recipe authority — celebrating the legume, the grain, and the table. Thoughtful cooking for curious eaters.</p>
+          <span class="meta">est. 2026 · london / new york</span>
+        </div>
+        <div class="footer-links">
+          <h4>Explore</h4>
+          <a href="#">Recipes</a>
+          <a href="#">Techniques</a>
+          <a href="#">Seasonal Guides</a>
+          <a href="#">Ingredients</a>
+        </div>
+        <div class="footer-links">
+          <h4>About</h4>
+          <a href="#">Editorial Policy</a>
+          <a href="#">Authors</a>
+          <a href="#">Contact</a>
+          <a href="#">FAQ</a>
+        </div>
+        <div class="footer-legal">
+          <h4>Legal</h4>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms & Conditions</a>
+          <a href="#">Cookie Policy</a>
+          <a href="#">Disclaimer</a>
+          <a href="#">Sitemap</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Butter Bean Plates · all rights reserved</span>
+        <span>crafted with butter & salt</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms of Use · Butter Bean Plates</title>
+  <meta name="description" content="Terms of use for Butter Bean Plates — thoughtful cooking, seasonal ingredients, and the art of the perfect plate.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:opsz,wght@14..32,300..700&family=Newsreader:ital,opsz,wght@0,6..72,200..700;1,6..72,200..700&display=swap" rel="stylesheet">
+  <style>
+    /* —— reset & base (same as about) —— */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #fbf8f2;
+      color: #1e1b1a;
+      font-family: 'Newsreader', 'Inter', serif;
+      font-weight: 400;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1.8rem;
+    }
+    /* —— typography —— */
+    .serif { font-family: 'DM Serif Display', 'Georgia', serif; }
+    .sans { font-family: 'Inter', 'Helvetica', sans-serif; }
+    .display-large {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(3rem, 8vw, 5.5rem);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      font-weight: 400;
+    }
+    .display-small {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+    }
+    .heading-2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      line-height: 1.2;
+    }
+    .heading-3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.6rem;
+      line-height: 1.3;
+    }
+    .body-large {
+      font-size: 1.2rem;
+      line-height: 1.7;
+      color: #2d2826;
+    }
+    .body-text {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: #2d2826;
+    }
+    .meta {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: #7a6e68;
+    }
+    .tag {
+      display: inline-block;
+      background: #e7ded7;
+      padding: 0.2rem 1rem;
+      border-radius: 30px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: #3d322e;
+      font-family: 'Inter', sans-serif;
+    }
+    /* —— buttons & interactive —— */
+    .btn-outline {
+      display: inline-block;
+      padding: 0.6rem 2rem;
+      border: 1.5px solid #1e1b1a;
+      border-radius: 60px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      font-size: 0.9rem;
+      letter-spacing: 0.02em;
+      transition: 0.2s ease;
+      background: transparent;
+      color: #1e1b1a;
+      cursor: default;
+    }
+    .btn-outline:hover {
+      background: #1e1b1a;
+      color: #fbf8f2;
+    }
+    /* —— colour palette —— */
+    :root {
+      --cream: #fbf8f2;
+      --warm-white: #f5efe9;
+      --terracotta: #c26a4a;
+      --olive: #7a8b6b;
+      --charcoal: #1e1b1a;
+      --sand: #d9cdc0;
+      --muted-gold: #b89a7a;
+    }
+    /* —— header / nav —— */
+    .site-header {
+      padding: 1.8rem 0 1.2rem;
+      border-bottom: 1px solid #e1d6ce;
+      background: var(--cream);
+    }
+    .header-grid {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .brand {
+      display: flex;
+      align-items: baseline;
+      gap: 0.3rem;
+    }
+    .brand-name {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.9rem;
+      letter-spacing: -0.02em;
+      color: #1e1b1a;
+    }
+    .brand-tagline {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 400;
+      color: #7a6e68;
+      letter-spacing: 0.06em;
+      margin-left: 0.2rem;
+      border-left: 1px solid #cbbcb2;
+      padding-left: 0.8rem;
+    }
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2.2rem;
+      font-family: 'Inter', sans-serif;
+      font-weight: 450;
+      font-size: 0.9rem;
+      letter-spacing: 0.02em;
+      color: #2d2826;
+    }
+    .nav-links a { transition: 0.15s; border-bottom: 1px solid transparent; }
+    .nav-links a:hover { border-bottom-color: #c26a4a; color: #1e1b1a; }
+    .search-icon {
+      font-size: 1.2rem;
+      opacity: 0.7;
+      cursor: default;
+      transition: 0.2s;
+    }
+    .search-icon:hover { opacity: 1; }
+
+    /* —— terms hero (simplified) —— */
+    .terms-hero {
+      padding: 3rem 0 1.5rem;
+      border-bottom: 1px solid #e1d6ce;
+    }
+    .terms-hero h1 {
+      margin-bottom: 0.3rem;
+    }
+    .terms-hero .meta {
+      margin-bottom: 0.2rem;
+    }
+    .terms-lead {
+      max-width: 780px;
+      margin-top: 0.6rem;
+      font-size: 1.15rem;
+      color: #2d2826;
+    }
+
+    /* —— terms content —— */
+    .terms-section {
+      padding: 3rem 0 2.5rem;
+      border-bottom: 1px solid #e1d6ce;
+    }
+    .terms-block {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .terms-block h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.8rem;
+      margin-top: 2.2rem;
+      margin-bottom: 0.5rem;
+    }
+    .terms-block h2:first-of-type {
+      margin-top: 0;
+    }
+    .terms-block p {
+      margin-bottom: 1.2rem;
+      font-size: 1.05rem;
+      color: #2d2826;
+    }
+    .terms-block ul {
+      margin: 0.5rem 0 1.2rem 1.8rem;
+      font-size: 1.05rem;
+      color: #2d2826;
+    }
+    .terms-block ul li {
+      margin-bottom: 0.4rem;
+    }
+    .terms-block .highlight-box {
+      background: #f5efe9;
+      padding: 1.6rem 2rem;
+      border-radius: 24px 8px 24px 4px;
+      border-left: 6px solid #c26a4a;
+      margin: 1.8rem 0;
+    }
+
+    /* —— footer —— */
+    .site-footer {
+      padding: 3.5rem 0 2rem;
+      background: #f5efe9;
+      margin-top: 2rem;
+      border-top: 1px solid #e1d6ce;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.2fr;
+      gap: 2.5rem;
+      margin-bottom: 2.5rem;
+    }
+    .footer-brand .brand-name { font-size: 1.6rem; }
+    .footer-brand p { margin: 0.6rem 0; font-size: 0.95rem; color: #3d322e; }
+    .footer-links h4, .footer-legal h4 { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 0.8rem; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 0.8rem; color: #4d3f3a; }
+    .footer-links a, .footer-legal a { display: block; padding: 0.25rem 0; font-size: 0.9rem; color: #3d322e; border-bottom: 1px solid transparent; transition: 0.1s; }
+    .footer-links a:hover, .footer-legal a:hover { border-bottom-color: #c26a4a; }
+    .footer-bottom {
+      border-top: 1px solid #d9cdc0;
+      padding-top: 1.8rem;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      font-size: 0.8rem;
+      color: #6b5d56;
+    }
+    /* —— responsive —— */
+    @media (max-width: 1024px) {
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 700px) {
+      .header-grid { flex-direction: column; align-items: start; }
+      .nav-links { gap: 1rem; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .terms-block ul { margin-left: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-grid">
+      <div class="brand">
+        <span class="brand-name">Butter Bean Plates</span>
+        <span class="brand-tagline">seasonal · honest · delicious</span>
+      </div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="terms.html" style="border-bottom-color:#c26a4a;">Terms Of Use</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="cookies.html">Cookies Policy</a>
+        <a href="disclaimer.html">Disclaimer</a>
+        <a href="categories.html">Categories</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- terms hero -->
+    <section class="terms-hero">
+      <div class="container">
+        <div class="meta">legal</div>
+        <h1 class="display-large">Terms of Use</h1>
+        <p class="terms-lead">Last updated: September 2026 · Please read these terms carefully before using Butter Bean Plates.</p>
+      </div>
+    </section>
+
+    <!-- terms content -->
+    <section class="terms-section">
+      <div class="container terms-block">
+        <h2>1. Acceptance of Terms</h2>
+        <p>By accessing or using the Butter Bean Plates website (the “Site”), you agree to be bound by these Terms of Use and our <a href="privacy.html" style="text-decoration: underline; color: #c26a4a;">Privacy Policy</a>. If you do not agree to these terms, please do not use the Site.</p>
+
+        <h2>2. Use of Content</h2>
+        <p>All recipes, articles, photographs, and other content on this Site are protected by copyright and other intellectual property laws. You may:</p>
+        <ul>
+          <li>View and print content for personal, non‑commercial use.</li>
+          <li>Share links to our content with proper attribution.</li>
+          <li>Adapt recipes for your own kitchen (we love that!).</li>
+        </ul>
+        <p>You may <strong>not</strong> republish, sell, or distribute our content without prior written permission. For media or commercial inquiries, please <a href="contact.html" style="text-decoration: underline; color: #c26a4a;">contact us</a>.</p>
+
+        <div class="highlight-box">
+          <p style="font-weight: 500; margin-bottom: 0.2rem;">🍽️ A note on recipes</p>
+          <p style="margin-bottom: 0;">We test our recipes thoroughly, but results may vary. We encourage you to experiment and make each dish your own — that’s the joy of cooking.</p>
+        </div>
+
+        <h2>3. User Contributions</h2>
+        <p>We welcome comments, feedback, and recipe adaptations. By submitting content to Butter Bean Plates (via comments, social media, or email), you grant us a non‑exclusive, royalty‑free, perpetual license to use, modify, and display that content in connection with the Site.</p>
+        <p>You are solely responsible for any content you submit, and you agree not to post anything that is unlawful, offensive, or infringes on the rights of others.</p>
+
+        <h2>4. Disclaimer of Warranties</h2>
+        <p>The Site and all content are provided “as is” without warranties of any kind, either express or implied. We do not guarantee that the Site will be error‑free, uninterrupted, or free of harmful components. Always use your own judgment when cooking and consuming food.</p>
+
+        <h2>5. Limitation of Liability</h2>
+        <p>To the fullest extent permitted by law, Butter Bean Plates and its contributors are not liable for any damages arising from your use of the Site or reliance on any content, including but not limited to direct, indirect, incidental, or consequential damages.</p>
+
+        <h2>6. External Links</h2>
+        <p>Our Site may contain links to third‑party websites. We are not responsible for the content, privacy practices, or accuracy of those sites. We encourage you to read their terms and policies.</p>
+
+        <h2>7. Changes to Terms</h2>
+        <p>We may update these Terms of Use from time to time. The “Last updated” date at the top of this page will reflect changes. Your continued use of the Site constitutes acceptance of the updated terms.</p>
+
+        <h2>8. Governing Law</h2>
+        <p>These terms are governed by the laws of the United Kingdom and the State of New York, without regard to conflict of law principles.</p>
+
+        <h2>9. Contact</h2>
+        <p>If you have any questions about these Terms of Use, please <a href="contact.html" style="text-decoration: underline; color: #c26a4a;">get in touch</a> — we’d love to hear from you.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- footer (same as about) -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="brand-name" style="font-family:'DM Serif Display',serif; font-size:1.8rem;">Butter Bean Plates</span>
+          <p style="max-width:90%;">A modern recipe authority — celebrating the legume, the grain, and the table. Thoughtful cooking for curious eaters.</p>
+          <span class="meta">est. 2026 · london / new york</span>
+        </div>
+        <div class="footer-links">
+          <h4>Explore</h4>
+          <a href="#">Recipes</a>
+          <a href="#">Techniques</a>
+          <a href="#">Seasonal Guides</a>
+          <a href="#">Ingredients</a>
+        </div>
+        <div class="footer-links">
+          <h4>About</h4>
+          <a href="#">Editorial Policy</a>
+          <a href="#">Authors</a>
+          <a href="#">Contact</a>
+          <a href="#">FAQ</a>
+        </div>
+        <div class="footer-legal">
+          <h4>Legal</h4>
+          <a href="terms.html">Terms of Use</a>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="cookies.html">Cookie Policy</a>
+          <a href="disclaimer.html">Disclaimer</a>
+          <a href="#">Sitemap</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Butter Bean Plates · all rights reserved</span>
+        <span>crafted with butter & salt</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

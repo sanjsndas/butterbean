@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Categories · Butter Bean Plates</title>
+  <meta name="description" content="Explore recipe categories by season, ingredient, and technique — Butter Bean Plates.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:opsz,wght@14..32,300..700&family=Newsreader:ital,opsz,wght@0,6..72,200..700;1,6..72,200..700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #fbf8f2;
+      color: #1e1b1a;
+      font-family: 'Newsreader', 'Inter', serif;
+      font-weight: 400;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1.8rem;
+    }
+    .serif { font-family: 'DM Serif Display', 'Georgia', serif; }
+    .sans { font-family: 'Inter', 'Helvetica', sans-serif; }
+    .display-large {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(3rem, 8vw, 5.5rem);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      font-weight: 400;
+    }
+    .display-small {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+    }
+    .heading-2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      line-height: 1.2;
+    }
+    .heading-3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.6rem;
+      line-height: 1.3;
+    }
+    .body-large {
+      font-size: 1.2rem;
+      line-height: 1.7;
+      color: #2d2826;
+    }
+    .body-text {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: #2d2826;
+    }
+    .meta {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: #7a6e68;
+    }
+    .tag {
+      display: inline-block;
+      background: #e7ded7;
+      padding: 0.2rem 1rem;
+      border-radius: 30px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: #3d322e;
+      font-family: 'Inter', sans-serif;
+    }
+    .btn-outline {
+      display: inline-block;
+      padding: 0.6rem 2rem;
+      border: 1.5px solid #1e1b1a;
+      border-radius: 60px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      font-size: 0.9rem;
+      letter-spacing: 0.02em;
+      transition: 0.2s ease;
+      background: transparent;
+      color: #1e1b1a;
+      cursor: default;
+    }
+    .btn-outline:hover {
+      background: #1e1b1a;
+      color: #fbf8f2;
+    }
+    :root {
+      --cream: #fbf8f2;
+      --warm-white: #f5efe9;
+      --terracotta: #c26a4a;
+      --olive: #7a8b6b;
+      --charcoal: #1e1b1a;
+      --sand: #d9cdc0;
+      --muted-gold: #b89a7a;
+    }
+    /* header */
+    .site-header {
+      padding: 1.8rem 0 1.2rem;
+      border-bottom: 1px solid #e1d6ce;
+      background: var(--cream);
+    }
+    .header-grid {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .brand {
+      display: flex;
+      align-items: baseline;
+      gap: 0.3rem;
+    }
+    .brand-name {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.9rem;
+      letter-spacing: -0.02em;
+      color: #1e1b1a;
+    }
+    .brand-tagline {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 400;
+      color: #7a6e68;
+      letter-spacing: 0.06em;
+      margin-left: 0.2rem;
+      border-left: 1px solid #cbbcb2;
+      padding-left: 0.8rem;
+    }
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2.2rem;
+      font-family: 'Inter', sans-serif;
+      font-weight: 450;
+      font-size: 0.9rem;
+      letter-spacing: 0.02em;
+      color: #2d2826;
+    }
+    .nav-links a { transition: 0.15s; border-bottom: 1px solid transparent; }
+    .nav-links a:hover { border-bottom-color: #c26a4a; color: #1e1b1a; }
+    .nav-links a.active { border-bottom-color: #c26a4a; }
+
+    /* categories hero */
+    .categories-hero {
+      padding: 2.5rem 0 1.5rem;
+      border-bottom: 1px solid #e1d6ce;
+    }
+    .categories-hero .meta { margin-bottom: 0.2rem; }
+    .categories-hero h1 { margin-bottom: 0.3rem; }
+    .categories-lead {
+      max-width: 700px;
+      font-size: 1.15rem;
+      color: #2d2826;
+    }
+
+    /* category grid */
+    .category-grid-section {
+      padding: 3rem 0 2rem;
+    }
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 2.2rem;
+      margin-top: 1.5rem;
+    }
+    .category-card {
+      background: #f5efe9;
+      border-radius: 32px 12px 32px 4px;
+      padding: 1.8rem 1.8rem 2rem;
+      transition: 0.2s ease;
+      border: 1px solid #e1d6ce;
+      display: flex;
+      flex-direction: column;
+    }
+    .category-card:hover {
+      background: #fbf8f2;
+      border-color: #c26a4a;
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px -12px rgba(30,27,26,0.12);
+    }
+    .category-icon {
+      font-size: 2.6rem;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+    .category-card h3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.8rem;
+      font-weight: 400;
+      margin-bottom: 0.3rem;
+    }
+    .category-card .sub {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: #7a6e68;
+      margin-bottom: 0.5rem;
+    }
+    .category-card p {
+      font-size: 0.98rem;
+      color: #2d2826;
+      margin-bottom: 0.8rem;
+      flex: 1;
+    }
+    .category-card .recipe-count {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: #6b5d56;
+      border-top: 1px solid #d9cdc0;
+      padding-top: 0.8rem;
+      margin-top: 0.2rem;
+    }
+    .category-tag {
+      display: inline-block;
+      background: #e7ded7;
+      padding: 0.1rem 0.8rem;
+      border-radius: 30px;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: #3d322e;
+      font-family: 'Inter', sans-serif;
+      align-self: flex-start;
+      margin-top: 0.2rem;
+    }
+    /* featured category highlight */
+    .featured-category {
+      background: #1e1b1a;
+      color: #fbf8f2;
+      border-radius: 48px 12px 48px 4px;
+      padding: 2rem 2.4rem;
+      margin: 2rem 0 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      border: none;
+    }
+    .featured-category h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2rem;
+      font-weight: 400;
+    }
+    .featured-category .btn-outline {
+      border-color: #fbf8f2;
+      color: #fbf8f2;
+      background: transparent;
+      cursor: default;
+    }
+    .featured-category .btn-outline:hover {
+      background: #fbf8f2;
+      color: #1e1b1a;
+    }
+    .featured-category p {
+      max-width: 60%;
+      color: #d9cdc0;
+    }
+
+    /* footer */
+    .site-footer {
+      padding: 3.5rem 0 2rem;
+      background: #f5efe9;
+      margin-top: 2rem;
+      border-top: 1px solid #e1d6ce;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.2fr;
+      gap: 2.5rem;
+      margin-bottom: 2.5rem;
+    }
+    .footer-brand .brand-name { font-size: 1.6rem; }
+    .footer-brand p { margin: 0.6rem 0; font-size: 0.95rem; color: #3d322e; }
+    .footer-links h4, .footer-legal h4 { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 0.8rem; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 0.8rem; color: #4d3f3a; }
+    .footer-links a, .footer-legal a { display: block; padding: 0.25rem 0; font-size: 0.9rem; color: #3d322e; border-bottom: 1px solid transparent; transition: 0.1s; }
+    .footer-links a:hover, .footer-legal a:hover { border-bottom-color: #c26a4a; }
+    .footer-bottom {
+      border-top: 1px solid #d9cdc0;
+      padding-top: 1.8rem;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      font-size: 0.8rem;
+      color: #6b5d56;
+    }
+    @media (max-width: 1024px) {
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .featured-category p { max-width: 100%; }
+    }
+    @media (max-width: 700px) {
+      .header-grid { flex-direction: column; align-items: start; }
+      .nav-links { gap: 1rem; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .featured-category { flex-direction: column; align-items: start; gap: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-grid">
+      <div class="brand">
+        <span class="brand-name">Butter Bean Plates</span>
+        <span class="brand-tagline">seasonal · honest · delicious</span>
+      </div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="terms.html">Terms Of Use</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="cookies.html">Cookies Policy</a>
+        <a href="disclaimer.html">Disclaimer</a>
+        <a href="categories.html" class="active">Categories</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- categories hero -->
+    <section class="categories-hero">
+      <div class="container">
+        <div class="meta">browse by</div>
+        <h1 class="display-large">Categories</h1>
+        <p class="categories-lead">From spring greens to slow‑braised beans, find your next dish by season, ingredient, or technique.</p>
+      </div>
+    </section>
+
+    <!-- featured category -->
+    <div class="container">
+      <div class="featured-category">
+        <div>
+          <span class="meta" style="color: #b89a7a;">★ featured</span>
+          <h2>Spring Butter Beans</h2>
+          <p>Bright, herbaceous, and utterly satisfying — our favourite recipes for the season of renewal.</p>
+        </div>
+        <span class="btn-outline" style="border-color:#fbf8f2;color:#fbf8f2;">12 recipes</span>
+      </div>
+    </div>
+
+    <!-- category grid -->
+    <section class="category-grid-section">
+      <div class="container">
+        <div class="category-grid">
+          <!-- card 1 -->
+          <div class="category-card">
+            <div class="category-icon">🌱</div>
+            <h3>Spring</h3>
+            <div class="sub">seasonal</div>
+            <p>Peas, asparagus, radishes, and tender greens. Light, bright, and full of life.</p>
+            <span class="category-tag">14 recipes</span>
+            <div class="recipe-count">Featured: butter bean & pea salad</div>
+          </div>
+          <!-- card 2 -->
+          <div class="category-card">
+            <div class="category-icon">☀️</div>
+            <h3>Summer</h3>
+            <div class="sub">seasonal</div>
+            <p>Tomatoes, courgettes, sweetcorn, and endless basil. Grilled, raw, or blitzed.</p>
+            <span class="category-tag">19 recipes</span>
+            <div class="recipe-count">Featured: grilled butter beans & corn</div>
+          </div>
+          <!-- card 3 -->
+          <div class="category-card">
+            <div class="category-icon">🍂</div>
+            <h3>Autumn</h3>
+            <div class="sub">seasonal</div>
+            <p>Pumpkin, squash, kale, and mushrooms. Earthy, warming, and deeply savoury.</p>
+            <span class="category-tag">11 recipes</span>
+            <div class="recipe-count">Featured: butter bean & sage stew</div>
+          </div>
+          <!-- card 4 -->
+          <div class="category-card">
+            <div class="category-icon">❄️</div>
+            <h3>Winter</h3>
+            <div class="sub">seasonal</div>
+            <p>Root veg, citrus, and hearty brassicas. Slow-cooked, spiced, and comforting.</p>
+            <span class="category-tag">8 recipes</span>
+            <div class="recipe-count">Featured: white bean & rosemary soup</div>
+          </div>
+          <!-- card 5 -->
+          <div class="category-card">
+            <div class="category-icon">🫘</div>
+            <h3>Beans & Legumes</h3>
+            <div class="sub">ingredient</div>
+            <p>Butter beans, chickpeas, lentils, and more — the backbone of our kitchen.</p>
+            <span class="category-tag">27 recipes</span>
+            <div class="recipe-count">Featured: classic butter bean mash</div>
+          </div>
+          <!-- card 6 -->
+          <div class="category-card">
+            <div class="category-icon">🌾</div>
+            <h3>Grains & Bread</h3>
+            <div class="sub">ingredient</div>
+            <p>Farro, barley, sourdough, and polenta. The perfect partners for beans.</p>
+            <span class="category-tag">16 recipes</span>
+            <div class="recipe-count">Featured: barley & butter bean bowl</div>
+          </div>
+          <!-- card 7 -->
+          <div class="category-card">
+            <div class="category-icon">🥄</div>
+            <h3>Slow & Braised</h3>
+            <div class="sub">technique</div>
+            <p>Low and slow cooking that extracts deep flavour from beans and vegetables.</p>
+            <span class="category-tag">12 recipes</span>
+            <div class="recipe-count">Featured: braised butter beans with garlic</div>
+          </div>
+          <!-- card 8 -->
+          <div class="category-card">
+            <div class="category-icon">🥗</div>
+            <h3>Fresh & Raw</h3>
+            <div class="sub">technique</div>
+            <p>Vibrant salads, crudos, and marinated beans that sing with freshness.</p>
+            <span class="category-tag">9 recipes</span>
+            <div class="recipe-count">Featured: marinated butter bean salad</div>
+          </div>
+          <!-- card 9 -->
+          <div class="category-card">
+            <div class="category-icon">🍳</div>
+            <h3>One‑Pan & Quick</h3>
+            <div class="sub">technique</div>
+            <p>Fast, unfussy meals for weeknights — all in a single pan or pot.</p>
+            <span class="category-tag">18 recipes</span>
+            <div class="recipe-count">Featured: butter bean & tomato skillet</div>
+          </div>
+          <!-- card 10 -->
+          <div class="category-card">
+            <div class="category-icon">🌿</div>
+            <h3>Herb‑Forward</h3>
+            <div class="sub">flavour</div>
+            <p>Parsley, dill, mint, and tarragon — where beans meet fresh herbs.</p>
+            <span class="category-tag">13 recipes</span>
+            <div class="recipe-count">Featured: herb & butter bean purée</div>
+          </div>
+          <!-- card 11 -->
+          <div class="category-card">
+            <div class="category-icon">🔥</div>
+            <h3>Smoky & Spiced</h3>
+            <div class="sub">flavour</div>
+            <p>Paprika, cumin, chipotle, and smoked salt — bold flavours for beans.</p>
+            <span class="category-tag">10 recipes</span>
+            <div class="recipe-count">Featured: smoked butter bean tacos</div>
+          </div>
+          <!-- card 12 -->
+          <div class="category-card">
+            <div class="category-icon">🧀</div>
+            <h3>Cheese & Dairy</h3>
+            <div class="sub">pairing</div>
+            <p>Pecorino, feta, parmesan, and yoghurt — creamy companions to beans.</p>
+            <span class="category-tag">15 recipes</span>
+            <div class="recipe-count">Featured: butter bean & feta bake</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="brand-name" style="font-family:'DM Serif Display',serif; font-size:1.8rem;">Butter Bean Plates</span>
+          <p style="max-width:90%;">A modern recipe authority — celebrating the legume, the grain, and the table. Thoughtful cooking for curious eaters.</p>
+          <span class="meta">est. 2026 · london / new york</span>
+        </div>
+        <div class="footer-links">
+          <h4>Explore</h4>
+          <a href="#">Recipes</a>
+          <a href="#">Techniques</a>
+          <a href="#">Seasonal Guides</a>
+          <a href="#">Ingredients</a>
+        </div>
+        <div class="footer-links">
+          <h4>About</h4>
+          <a href="#">Editorial Policy</a>
+          <a href="#">Authors</a>
+          <a href="#">Contact</a>
+          <a href="#">FAQ</a>
+        </div>
+        <div class="footer-legal">
+          <h4>Legal</h4>
+          <a href="terms.html">Terms of Use</a>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="cookies.html">Cookie Policy</a>
+          <a href="disclaimer.html">Disclaimer</a>
+          <a href="#">Sitemap</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Butter Bean Plates · all rights reserved</span>
+        <span>crafted with butter & salt</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
